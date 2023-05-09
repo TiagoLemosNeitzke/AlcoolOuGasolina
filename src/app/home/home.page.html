@@ -1,20 +1,62 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-grid fixed>
+    <ion-row id="header">
+      <ion-col size="12">
+        <ion-img src="/assets/logo.png"></ion-img>
+      </ion-col>
+    </ion-row>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+    <ion-row>
+      <ion-col size="12">
+        <h4 class="ion-text-center">
+          Saiba qual a melhor opção para abastecimento do seu carro.
+        </h4>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="12">
+
+          <ion-item>
+            <ion-label position="stacked">
+              <h2>Preço Alcool</h2>
+            </ion-label>
+            <ion-input type="text" placeholder="4,90" [(ngModel)]="precoAlcool"></ion-input>
+          </ion-item>
+        
+
+          <ion-item>
+            <ion-label position="stacked">
+              <h2>Preço Gasolina</h2>
+            </ion-label>
+            <ion-input type="text" placeholder="6,90" [(ngModel)]="precoGasolina"></ion-input>
+          </ion-item>
+
+          <ion-row>
+            <ion-col size="12" class="center">
+              <ion-button id="button" shape="round" fill="solid" size="small" color="primary" (click)="calcular()"
+                expand="full">
+                <ion-label>Calcular</ion-label>
+              </ion-button>
+            </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col size="12" class="center">
+              <input id="result" type="text" value="{{ resultado }}">
+            </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col size="12">
+              <p id="information">
+                O cálculo do Inmetro tomado como padrão considera que, para saber se o álcool leva vantagem sobre a gasolina, o preço do
+                litro do álcool dividido pelo preço do litro da gasolina deve ser igual ou inferior a 0,7 ou 70%.
+              </p>
+            </ion-col>
+          </ion-row>
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
